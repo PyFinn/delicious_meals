@@ -1,3 +1,4 @@
+import 'package:delicious_meals/category_meals.dart';
 import 'package:flutter/material.dart';
 import './categories.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Roboto Condensed',
                   fontWeight: FontWeight.bold))),
       home: Categories(),
+      routes: {'/category-meals': (context) => CategoryMeals()},
     );
   }
 }
