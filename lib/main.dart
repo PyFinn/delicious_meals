@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Roboto Condensed',
                   fontWeight: FontWeight.bold))),
       home: Categories(),
-      routes: {'/category-meals': (context) => CategoryMeals()},
+      routes: {CategoryMeals.routeName: (context) => CategoryMeals()},
     );
   }
 }
