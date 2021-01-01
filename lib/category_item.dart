@@ -16,7 +16,10 @@ class CategoryItem extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight),
           borderRadius: BorderRadius.circular(15)),
-      child: Text(title),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.headline6,
+      ),
     );
   }
 }
