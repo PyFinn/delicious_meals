@@ -1,3 +1,5 @@
+import 'package:delicious_meals/meal_detail_screen.dart';
+
 import './meal.dart';
 import 'package:flutter/material.dart';
 
@@ -40,12 +42,14 @@ class MealItem extends StatelessWidget {
     }
   }
 
-  void _selectMeal() {}
+  void _selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(MealDetailScreen.routeName);
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: _selectMeal,
+      onTap: () => _selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 4,

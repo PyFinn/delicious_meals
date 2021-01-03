@@ -1,4 +1,5 @@
 import 'package:delicious_meals/category_meals.dart';
+import 'package:delicious_meals/meal_detail_screen.dart';
 import 'package:flutter/material.dart';
 import './categories.dart';
 
@@ -22,7 +23,15 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Roboto Condensed',
                   fontWeight: FontWeight.bold))),
       home: Categories(),
-      routes: {CategoryMeals.routeName: (context) => CategoryMeals()},
+      routes: {
+        CategoryMeals.routeName: (context) => CategoryMeals(),
+        MealDetailScreen.routeName: (context) => MealDetailScreen()
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (_) => Categories(),
+        );
+      },
     );
   }
 }
