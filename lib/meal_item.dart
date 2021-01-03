@@ -23,6 +23,23 @@ class MealItem extends StatelessWidget {
     }
   }
 
+  String get affordabilityValue {
+    switch (meal.affordability) {
+      case Affordability.Affordable:
+        return 'Affordable';
+        break;
+      case Affordability.Luxurious:
+        return 'Luxurious';
+        break;
+      case Affordability.Pricey:
+        return 'Pricey';
+        break;
+      default:
+        return 'Unknown';
+        break;
+    }
+  }
+
   void _selectMeal() {}
 
   @override
@@ -85,6 +102,15 @@ class MealItem extends StatelessWidget {
                         width: 6,
                       ),
                       Text('$complexityValue')
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.attach_money),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text('$affordabilityValue')
                     ],
                   )
                 ],
