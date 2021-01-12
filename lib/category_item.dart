@@ -1,4 +1,4 @@
-import './category_meals.dart';
+import 'screens/category_meals.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {

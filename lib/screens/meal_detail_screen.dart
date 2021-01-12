@@ -1,7 +1,7 @@
 import 'package:delicious_meals/original.dart';
 import 'package:flutter/material.dart';
 
-import './meal.dart';
+import '../meal.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const String routeName = '/meal-detail';

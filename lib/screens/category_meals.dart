@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './original.dart';
-import './meal_item.dart';
+import '../original.dart';
+import '../meal_item.dart';
 
 class CategoryMeals extends StatelessWidget {
   static const String routeName = '/category-meals';
