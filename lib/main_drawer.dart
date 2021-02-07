@@ -1,3 +1,4 @@
+import 'package:delicious_meals/screens/filters_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -36,7 +37,9 @@ class MainDrawer extends StatelessWidget {
                   fontSize: 24,
                   fontWeight: FontWeight.bold),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed('/');
+            },
           ),
           ListTile(
             leading: Icon(
@@ -50,7 +53,10 @@ class MainDrawer extends StatelessWidget {
                   fontSize: 24,
                   fontWeight: FontWeight.bold),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => FiltersScreen()));
+            },
           )
         ],
       ),

@@ -23,8 +23,9 @@ class MyApp extends StatelessWidget {
                   fontSize: 20,
                   fontFamily: 'Roboto Condensed',
                   fontWeight: FontWeight.bold))),
-      home: TabsScreen(),
+      initialRoute: '/',
       routes: {
+        '/': (context) => TabsScreen(),
         CategoryMeals.routeName: (context) => CategoryMeals(),
         MealDetailScreen.routeName: (context) => MealDetailScreen()
       },
