@@ -1,6 +1,7 @@
-import 'package:delicious_meals/screens/categories.dart';
-import 'package:delicious_meals/screens/favorites_screen.dart';
 import 'package:flutter/material.dart';
+import './categories.dart';
+import './favorites_screen.dart';
+import '../main_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   @override
@@ -18,9 +19,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text('Meals'),
       ),
-      drawer: Drawer(
-        child: Text('The Drawer!'),
-      ),
+      drawer: MainDrawer(),
       body: pages[_selectedPage],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int index) {
