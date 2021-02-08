@@ -1,4 +1,3 @@
-import 'package:delicious_meals/original.dart';
 import 'package:flutter/material.dart';
 
 import '../meal.dart';
@@ -35,45 +34,52 @@ class MealDetailScreen extends StatelessWidget {
 
     return Center(
       child: Scaffold(
-          appBar: AppBar(
-            title: Text('${meal.title}'),
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height: 300,
-                  width: double.infinity,
-                  child: Image.network(
-                    meal.imageUrl,
-                    fit: BoxFit.cover,
+        appBar: AppBar(
+          title: Text('${meal.title}'),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: 300,
+                width: double.infinity,
+                child: Image.network(
+                  meal.imageUrl,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              _buildSectionTitle('Ingredients', context),
+              _buildContainer(ListView.builder(
+                itemCount: meal.ingredients.length,
+                itemBuilder: (context, index) => Card(
+                  color: Theme.of(context).accentColor,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: Text(meal.ingredients[index]),
                   ),
                 ),
-                _buildSectionTitle('Ingredients', context),
-                _buildContainer(ListView.builder(
-                  itemCount: meal.ingredients.length,
-                  itemBuilder: (context, index) => Card(
-                    color: Theme.of(context).accentColor,
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                      child: Text(meal.ingredients[index]),
-                    ),
+              )),
+              _buildSectionTitle('Steps', context),
+              _buildContainer(ListView.builder(
+                itemCount: meal.steps.length,
+                itemBuilder: (context, index) => ListTile(
+                  leading: CircleAvatar(
+                    child: Text((index + 1).toString()),
                   ),
-                )),
-                _buildSectionTitle('Steps', context),
-                _buildContainer(ListView.builder(
-                  itemCount: meal.steps.length,
-                  itemBuilder: (context, index) => ListTile(
-                    leading: CircleAvatar(
-                      child: Text((index + 1).toString()),
-                    ),
-                    title: Text(meal.steps[index]),
-                  ),
-                ))
-              ],
-            ),
-          )),
+                  title: Text(meal.steps[index]),
+                ),
+              ))
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.delete),
+          onPressed: () {
+            Navigator.of(context).pop(meal.id);
+          },
+        ),
+      ),
     );
   }
 }
