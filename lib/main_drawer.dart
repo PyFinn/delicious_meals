@@ -54,8 +54,7 @@ class MainDrawer extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => FiltersScreen()));
+              Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);
             },
           )
         ],
