@@ -47,7 +47,7 @@ class _CategoryMealsState extends State<CategoryMeals> {
         ),
         body: ListView.builder(
           itemBuilder: (context, index) {
-            return MealItem(displayedMeals[index], removeMeal);
+            return MealItem(displayedMeals[index]);
           },
           itemCount: displayedMeals.length,
         ));
